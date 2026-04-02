@@ -21,6 +21,11 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
+.font-display {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.03em;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -336,6 +341,12 @@ body {
 .animate-badge-swap {
   display: inline-block;
   animation: badgeSwap 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmerBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ============================================

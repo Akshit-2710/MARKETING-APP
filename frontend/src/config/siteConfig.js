@@ -26,21 +26,24 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  headlinePart1: "[ADD HEADLINE PART 1]",
+  headlinePart1: "We Don't Do Marketing.",
   rotatingWords: [
-    "[ADD ROTATING WORD 1]",
-    "[ADD ROTATING WORD 2]",
-    "[ADD ROTATING WORD 3]",
-    "[ADD ROTATING WORD 4]",
+    "Authority.",
+    "Dominance.",
+    "Transformation.",
+    "Results.",
+    "Prestige.",
+    "Urgency.",
+    "Identity.",
   ],
-  headlinePart2: "[ADD HEADLINE PART 2]",
-  description: "[ADD YOUR HERO DESCRIPTION — A short paragraph about your agency's mission and value proposition]",
-  ctaPrimary: "Get Started",
-  ctaSecondary: "View Our Work",
+  headlinePart2: "We Build Market Leaders.",
+  description: "Your competitors are already winning. While you're still thinking about it — they're scaling. We position ambitious brands at the top with strategies that demand attention, convert on impact, and leave your market no choice but to notice you.",
+  ctaPrimary: "Claim Your Edge",
+  ctaSecondary: "See The Proof",
   trustBadges: [
-    "[ADD NUMBER]+ Clients Served",
-    "[ADD NUMBER]+ Projects Delivered",
-    "[ADD NUMBER]+ Years Experience",
+    "[ADD NUMBER]+ Brands Scaled",
+    "[ADD NUMBER]+ Revenue Generated",
+    "[ADD NUMBER]+ Markets Dominated",
   ],
 };
 
