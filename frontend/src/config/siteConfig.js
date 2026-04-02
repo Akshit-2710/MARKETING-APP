@@ -26,8 +26,14 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  headline: "[ADD YOUR MAIN HEADLINE]",
-  subheadline: "[ADD YOUR SUBHEADLINE]",
+  headlinePart1: "[ADD HEADLINE PART 1]",
+  rotatingWords: [
+    "[ADD ROTATING WORD 1]",
+    "[ADD ROTATING WORD 2]",
+    "[ADD ROTATING WORD 3]",
+    "[ADD ROTATING WORD 4]",
+  ],
+  headlinePart2: "[ADD HEADLINE PART 2]",
   description: "[ADD YOUR HERO DESCRIPTION — A short paragraph about your agency's mission and value proposition]",
   ctaPrimary: "Get Started",
   ctaSecondary: "View Our Work",
