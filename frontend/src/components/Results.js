@@ -1,38 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import { RESULTS } from "@/config/siteConfig";
+import { RESULTS, TESTIMONIALS } from "@/config/siteConfig";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-function AnimatedCounter({ target, isVisible, index }) {
-  const [count, setCount] = useState(0);
-  const numericTarget = parseInt(target.replace(/[^0-9]/g, ""), 10);
-  const hasNumber = !isNaN(numericTarget) && numericTarget > 0;
-  const hasRun = useRef(false);
-
-  useEffect(() => {
-    if (!isVisible || !hasNumber || hasRun.current) return;
-    hasRun.current = true;
-    const delay = index * 200;
-    const timeout = setTimeout(() => {
-      const duration = 2000;
-      const steps = 60;
-      const increment = numericTarget / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= numericTarget) {
-          setCount(numericTarget);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-    }, delay);
-    return () => clearTimeout(timeout);
-  }, [isVisible, numericTarget, hasNumber, index]);
-
-  if (!hasNumber) return <span>{target}</span>;
-  return <span>{count.toLocaleString()}</span>;
-}
+// Animated counter removed as stats are replaced by reviews
 
 export default function Results() {
   const [ref, isVisible] = useScrollReveal(0.2);
@@ -63,25 +33,37 @@ export default function Results() {
           {RESULTS.heading}
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {RESULTS.stats.map((stat, i) => (
+        {/* Client Quotes with IG Profile Pictures */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {TESTIMONIALS.items.map((item, i) => (
             <div
               key={i}
-              data-testid={`stat-box-${i}`}
-              className="text-center"
+              className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-colors"
               style={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
-                transition: `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${i * 150}ms`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${300 + (i * 150)}ms`,
               }}
             >
-              <div className={`text-3xl md:text-5xl font-bold text-[#F8C8D4] font-heading tracking-tight ${isVisible ? 'counter-pulse visible' : ''}`}>
-                <AnimatedCounter target={stat.number} isVisible={isVisible} index={i} />
-                {stat.suffix}
+              <div className="flex items-center gap-4 mb-6">
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="shrink-0" title={`Visit ${item.name} on Instagram`}>
+                    <img
+                      src={item.avatar}
+                      alt={item.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-[#F8C8D4] hover:scale-110 transition-transform duration-300"
+                      onError={(e) => { e.target.onerror = null; e.target.src = "/images/lords_furnitures.png" }}
+                    />
+                  </a>
+                ) : (
+                  <img src={item.avatar} alt={item.name} className="w-16 h-16 rounded-full object-cover border-2 border-[#F8C8D4]" />
+                )}
+                <div>
+                  <h3 className="text-[#F8C8D4] font-bold text-lg font-heading">{item.name}</h3>
+                  <p className="text-white/60 text-sm">{item.designation}, {item.company}</p>
+                </div>
               </div>
-              <div className="mt-3 text-sm md:text-base text-white/70 font-medium">
-                {stat.label}
-              </div>
+              <p className="text-white/90 italic leading-relaxed text-sm md:text-base">"{item.text}"</p>
             </div>
           ))}
         </div>

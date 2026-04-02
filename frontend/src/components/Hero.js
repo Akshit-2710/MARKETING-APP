@@ -22,7 +22,7 @@ function RotatingBadge({ words }) {
       {/* Glow pulse behind badge */}
       <span className="absolute inset-0 rounded-full bg-[#1A3C8F] blur-2xl opacity-15 scale-110 animate-pulse" />
       <span
-        className="relative inline-flex items-center justify-center px-6 md:px-10 py-2 md:py-3 rounded-full bg-gradient-to-r from-[#1A3C8F] via-[#0D2561] to-[#1A3C8F] text-white font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold shadow-2xl shadow-[#1A3C8F]/30 overflow-hidden"
+        className="relative inline-flex items-center justify-center px-6 md:px-10 py-2 md:py-3 rounded-full bg-gradient-to-r from-[#1A3C8F] via-[#0D2561] to-[#1A3C8F] text-white font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold shadow-2xl shadow-[#1A3C8F]/30 overflow-hidden"
         style={{ minWidth: "220px", backgroundSize: "200% 100%", animation: "shimmerBg 3s ease-in-out infinite" }}
       >
         <span
@@ -98,7 +98,7 @@ export default function Hero({ showContent }) {
         <div style={lineStyle(1)}>
           <h1
             data-testid="hero-headline"
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#1A3C8F] leading-[0.95] tracking-[-0.03em]"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.375rem] font-extrabold text-[#1A3C8F] leading-[0.95] tracking-[-0.03em]"
           >
             {HERO.headlinePart1}
           </h1>
@@ -106,7 +106,7 @@ export default function Hero({ showContent }) {
 
         {/* Line 2: "We Build" + Rotating Power Word */}
         <div style={lineStyle(2)} className="mt-4 md:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
-          <span className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D2561]/40 leading-[0.95]">
+          <span className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-[#0D2561]/40 leading-[0.95]">
             We Build
           </span>
           <RotatingBadge words={HERO.rotatingWords} />
@@ -116,7 +116,7 @@ export default function Hero({ showContent }) {
         <div style={lineStyle(3)} className="mt-4 md:mt-5">
           <h2
             data-testid="hero-subheadline"
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D2561] leading-[0.95] tracking-[-0.03em]"
+            className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-extrabold text-[#0D2561] leading-[0.95] tracking-[-0.03em]"
           >
             {HERO.headlinePart2}
           </h2>

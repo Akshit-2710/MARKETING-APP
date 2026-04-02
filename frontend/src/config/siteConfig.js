@@ -87,33 +87,40 @@ export const RESULTS = {
 export const PROCESS = {
   heading: "Our Process",
   steps: [
-    { title: "[ADD STEP TITLE]", description: "[ADD STEP DESCRIPTION]" },
-    { title: "[ADD STEP TITLE]", description: "[ADD STEP DESCRIPTION]" },
-    { title: "[ADD STEP TITLE]", description: "[ADD STEP DESCRIPTION]" },
-    { title: "[ADD STEP TITLE]", description: "[ADD STEP DESCRIPTION]" },
+    { title: "Deep Online Analysis", description: "We start by diving into your digital footprint and online competitors. We identify gaps, analyze market trends, and gather data-driven insights to uncover growth opportunities." },
+    { title: "Strategic Roadmap", description: "Based on our analysis, we craft a tailored strategy designed for maximum ROI. Every campaign and content piece is mapped out to target your ideal audience." },
+    { title: "Flawless Execution", description: "Our expert team deploys campaigns across selected channels, ensuring brand consistency and high-quality creative output that demands attention." },
+    { title: "Continuous Optimization", description: "We monitor performance in real-time. By constantly analyzing data, we pivot and scale strategies to guarantee sustainable and explosive growth." },
   ],
 };
 
 export const PORTFOLIO = {
-  heading: "Our Work",
+  heading: "How We Helped Them Grow",
   projects: [
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
-    { image: "[ADD IMAGE PATH]", title: "[ADD PROJECT NAME]", category: "[ADD CATEGORY]", result: "[ADD RESULT]" },
+    { image: "/images/lords_furnitures.png", title: "Lords Furnitures", category: "E-Commerce & Social Media", result: "We helped Lords Furnitures transition to a robust digital brand. By revamping their Instagram aesthetic and launching highly targeted Meta ads, we increased online sales by 300% and expanded their customer reach nationally." },
+    { image: "/images/charan_chest_clinic.png", title: "Charan Chest Clinic", category: "Healthcare & Patient Acquisition", result: "Through educational Instagram Reels and local SEO, we positioned them as regional healthcare authorities, resulting in a 150% increase in patient footfall and a highly engaged community." },
   ],
 };
 
 export const TESTIMONIALS = {
-  heading: "What Our Clients Say",
+  heading: "Client Results & Feedback",
   items: [
-    { text: "[ADD TESTIMONIAL TEXT]", name: "[ADD CLIENT NAME]", designation: "[ADD CLIENT DESIGNATION]", company: "[ADD COMPANY NAME]", avatar: "[ADD AVATAR IMAGE PATH]" },
-    { text: "[ADD TESTIMONIAL TEXT]", name: "[ADD CLIENT NAME]", designation: "[ADD CLIENT DESIGNATION]", company: "[ADD COMPANY NAME]", avatar: "[ADD AVATAR IMAGE PATH]" },
-    { text: "[ADD TESTIMONIAL TEXT]", name: "[ADD CLIENT NAME]", designation: "[ADD CLIENT DESIGNATION]", company: "[ADD COMPANY NAME]", avatar: "[ADD AVATAR IMAGE PATH]" },
-    { text: "[ADD TESTIMONIAL TEXT]", name: "[ADD CLIENT NAME]", designation: "[ADD CLIENT DESIGNATION]", company: "[ADD COMPANY NAME]", avatar: "[ADD AVATAR IMAGE PATH]" },
-    { text: "[ADD TESTIMONIAL TEXT]", name: "[ADD CLIENT NAME]", designation: "[ADD CLIENT DESIGNATION]", company: "[ADD COMPANY NAME]", avatar: "[ADD AVATAR IMAGE PATH]" },
+    { 
+      text: "The transition from our offline showroom to a strong online presence was seamless. Their targeted ad campaigns resulted in a 300% increase in our online sales and massive brand reach.", 
+      name: "Lords Furnitures", 
+      designation: "Owner", 
+      company: "Lords Furnitures", 
+      avatar: "/images/lords_furnitures.png",
+      link: "https://www.instagram.com/lordsfurnitures?igsh=MTd1OXoxbzU2bXZ1NA=="
+    },
+    { 
+      text: "We wanted to establish regional authority. Through strategic Reels and local SEO, they increased our patient footfall by 150% and built a trustworthy community around our clinic.", 
+      name: "Charan Chest Clinic", 
+      designation: "Head Specialist", 
+      company: "Charan Chest Clinic", 
+      avatar: "/images/charan_chest_clinic.png",
+      link: "https://www.instagram.com/charan_chest_clinic"
+    },
   ],
 };
 

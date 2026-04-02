@@ -53,10 +53,21 @@ export default function Testimonials() {
                     </p>
                     <div className="mt-6 flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-[#F8C8D4] flex items-center justify-center text-[#1A3C8F] font-bold text-sm font-heading shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110">
-                        {item.avatar && !item.avatar.includes("[ADD") ? (
-                          <img src={item.avatar} alt={item.name} className="w-full h-full object-cover" />
+                        {item.link ? (
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative cursor-pointer" title={`Visit ${item.name} on Instagram`}>
+                            {item.avatar && !item.avatar.includes("[ADD") ? (
+                              <img src={item.avatar} alt={item.name} className="w-full h-full object-cover hover:opacity-80 transition-opacity" />
+                            ) : (
+                              <span className="w-full h-full flex items-center justify-center">{item.name.charAt(0) === "[" ? "?" : item.name.charAt(0)}</span>
+                            )}
+                            {/* Small IG indicator glow/overlay entirely optional, keeping it clean */}
+                          </a>
                         ) : (
-                          item.name.charAt(0) === "[" ? "?" : item.name.charAt(0)
+                          item.avatar && !item.avatar.includes("[ADD") ? (
+                            <img src={item.avatar} alt={item.name} className="w-full h-full object-cover" />
+                          ) : (
+                            item.name.charAt(0) === "[" ? "?" : item.name.charAt(0)
+                          )
                         )}
                       </div>
                       <div>
