@@ -1,0 +1,153 @@
+{
+  "project_context": {
+    "domain": "Creative Marketing Agency",
+    "theme": "Light & Dark mixed",
+    "archetype": "Hybrid of 3 (Pastel & Soft) & 4 (Swiss & High-Contrast)",
+    "description": "A high-conversion, professional yet creative marketing agency website named 'MARKETING MEDIA'. Designed to balance approachability (baby pinks) with authority (dark navy blues). The layout relies on generous spacing, geometric grids (Bento), and crisp contrasts."
+  },
+  "design_system": {
+    "colors": {
+      "primary_blue": "#1A3C8F",
+      "baby_pink": "#F8C8D4",
+      "white": "#FFFFFF",
+      "soft_pink": "#FDE8EE",
+      "dark_blue": "#0D2561",
+      "text_dark": "#0D2561",
+      "text_light": "#FFFFFF",
+      "border": "rgba(13, 37, 97, 0.1)"
+    },
+    "typography": {
+      "headings": {
+        "fontFamily": "Poppins, sans-serif",
+        "weight": "700",
+        "tracking": "tracking-tight",
+        "scale": {
+          "h1": "text-4xl md:text-5xl lg:text-6xl",
+          "h2": "text-3xl md:text-4xl",
+          "h3": "text-2xl md:text-3xl",
+          "h4": "text-xl md:text-2xl"
+        }
+      },
+      "body": {
+        "fontFamily": "Inter, sans-serif",
+        "weight": "400",
+        "tracking": "tracking-normal",
+        "scale": {
+          "base": "text-base",
+          "sm": "text-sm",
+          "lg": "text-lg"
+        }
+      }
+    },
+    "spacing_and_layout": {
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "section_spacing": "py-20 lg:py-32",
+      "grid_gaps": "gap-6 md:gap-8",
+      "border_radius": {
+        "cards": "rounded-2xl",
+        "buttons": "rounded-full"
+      }
+    },
+    "surfaces": {
+      "glass": "backdrop-blur-xl bg-white/70 border-b border-[#0D2561]/10",
+      "flat_card": "bg-white border border-[#0D2561]/10 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
+      "dark_card": "bg-[#1A3C8F] border border-white/10 text-white"
+    },
+    "motion": {
+      "default_transition": "transition-all duration-300 ease-in-out",
+      "scroll_reveal": "opacity-0 translate-y-8 (to be triggered via framer-motion or intersection observer)",
+      "hover_scale": "hover:scale-[1.02]"
+    }
+  },
+  "sections": [
+    {
+      "name": "Navbar",
+      "layout": "Sticky, top-0, z-50",
+      "surface": "glass",
+      "features": ["Logo left", "Links center (hidden on mobile)", "Hamburger right (mobile)", "CTA button right (desktop)", "Active section highlighting"]
+    },
+    {
+      "name": "Hero",
+      "layout": "Min-h-[90vh] flex flex-col items-center justify-center text-center",
+      "background": "bg-gradient-to-br from-[#F8C8D4] to-[#FDE8EE] relative overflow-hidden",
+      "content": "H1 Heading in primary_blue, Subheading in dark_blue, 2 CTA Buttons (Primary: dark_blue bg, Secondary: white bg with border). Add a subtle noise texture overlay."
+    },
+    {
+      "name": "Services",
+      "layout": "Bento Grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+      "background": "bg-white",
+      "content": "6 Cards. Use flat_card surface. Icons (Lucide) in baby_pink bg circles. Left-aligned content."
+    },
+    {
+      "name": "Results/Stats",
+      "layout": "grid-cols-2 md:grid-cols-4",
+      "background": "bg-[#0D2561]",
+      "content": "Animated counters (use react-countup or framer-motion). Text in white, numbers highlighted in baby_pink."
+    },
+    {
+      "name": "Process",
+      "layout": "Horizontal Timeline (Flex row on desktop, col on mobile)",
+      "background": "bg-[#FDE8EE]",
+      "content": "4 Steps. Line connecting steps. Circles for step numbers. Title in primary_blue."
+    },
+    {
+      "name": "Portfolio/Work",
+      "layout": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+      "background": "bg-white",
+      "content": "6 Image Cards. Container relative, aspect-square or 4:3. Hover state: absolute inset-0 bg-[#0D2561]/80 opacity-0 hover:opacity-100 flex items-center justify-center. Title and 'View Project' text appear on hover."
+    },
+    {
+      "name": "Testimonials",
+      "layout": "Carousel Slider (Shadcn/Embla)",
+      "background": "bg-white",
+      "content": "Cards with soft_pink bg. Avatar image, Name, Role, Quote. Left-aligned text."
+    },
+    {
+      "name": "Why Choose Us",
+      "layout": "2x2 Grid with a large Header column (md:grid-cols-2)",
+      "background": "bg-[#0D2561]",
+      "content": "High contrast. White text. Large Lucide icons. Focus on agency USPs."
+    },
+    {
+      "name": "Contact/CTA",
+      "layout": "Two columns: Form on left, Contact Info on right",
+      "background": "bg-[#FDE8EE]",
+      "content": "Shadcn Form. Input fields for Name, Email, Company, Message. Submit button. Data to be connected to MongoDB backend. Right column: Address, Phone, Email."
+    },
+    {
+      "name": "Footer",
+      "layout": "3-col layout",
+      "background": "bg-[#1A3C8F] text-white",
+      "content": "Col 1: Logo & Brief, Col 2: Quick Links, Col 3: Socials. Huge padding (py-20)."
+    }
+  ],
+  "assets": {
+    "hero_graphic": "https://images.unsplash.com/photo-1758873271902-a63ecd5b5235?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBhZ2VuY3klMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+    "portfolio": [
+      "https://images.unsplash.com/photo-1770259406678-420c4adc44f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxicmFuZGluZyUyMGRlc2lnbiUyMG1vY2t1cCUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1770048792381-55d47c183faa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxicmFuZGluZyUyMGRlc2lnbiUyMG1vY2t1cCUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1766503206606-27de0861e8a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHw0fHxicmFuZGluZyUyMGRlc2lnbiUyMG1vY2t1cCUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758873268238-0b93e41fdcf5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxtYXJrZXRpbmclMjBhZ2VuY3klMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758873268786-52af523052f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxtYXJrZXRpbmclMjBhZ2VuY3klMjBvZmZpY2UlMjBtb2Rlcm58ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/34215697/pexels-photo-34215697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "testimonials": [
+      "https://images.unsplash.com/photo-1623594675959-02360202d4d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHNtaWxpbmd8ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHNtaWxpbmd8ZW58MHx8fHwxNzc1MTQxMDM4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "testing": {
+    "data_testid_rules": "All interactive elements (buttons, links, inputs, forms) must include a 'data-testid' attribute using kebab-case role-based naming (e.g., 'navbar-mobile-menu-toggle', 'hero-primary-cta', 'contact-submit-button')."
+  },
+  "instructions_to_main_agent": [
+    "Install lucide-react for icons.",
+    "Use framer-motion for scroll reveal animations and active section highlighting.",
+    "Do NOT use 'Inter' font for headings, enforce Poppins.",
+    "The Hero section MUST use the baby pink gradient with #0D2561 and #1A3C8F text for contrast.",
+    "Store the contact form data in MongoDB via a FastAPI backend route.",
+    "Ensure the layout is entirely responsive (mobile-first approach).",
+    "All configuration data (section text, cards, steps) must be stored in a config.js or JSON file so it is 'owner editable'.",
+    "Use standard HTML/Tailwind for marketing layouts. Use Shadcn primarily for the Contact form, Testimonial Carousel, and interactive overlays."
+  ]
+}
