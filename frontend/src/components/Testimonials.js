@@ -20,18 +20,22 @@ export default function Testimonials() {
     >
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto px-6 md:px-12 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className="max-w-7xl mx-auto px-6 md:px-12"
       >
         <h2
           data-testid="testimonials-heading"
-          className="font-heading text-3xl md:text-4xl font-bold text-[#1A3C8F] text-center mb-16 tracking-tight"
+          className={`font-heading text-3xl md:text-4xl font-bold text-[#1A3C8F] text-center mb-16 tracking-tight transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           {TESTIMONIALS.heading}
         </h2>
 
-        <div className="max-w-5xl mx-auto px-12">
+        <div
+          className={`max-w-5xl mx-auto px-12 transition-all duration-700 delay-200 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
           <Carousel
             opts={{ align: "start", loop: true }}
             data-testid="testimonials-carousel"
@@ -41,14 +45,14 @@ export default function Testimonials() {
                 <CarouselItem key={i} className="pl-6 md:basis-1/2">
                   <div
                     data-testid={`testimonial-card-${i}`}
-                    className="bg-[#FDE8EE] rounded-2xl p-8 h-full flex flex-col"
+                    className="bg-[#FDE8EE] rounded-2xl p-8 h-full flex flex-col group transition-all duration-300 hover:shadow-lg hover:shadow-[#F8C8D4]/40 hover:-translate-y-1"
                   >
-                    <Quote size={28} className="text-[#1A3C8F]/20 mb-4 shrink-0" />
+                    <Quote size={28} className="text-[#1A3C8F]/20 mb-4 shrink-0 quote-icon" />
                     <p className="text-sm text-[#333333] leading-relaxed flex-1 italic">
                       "{item.text}"
                     </p>
                     <div className="mt-6 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[#F8C8D4] flex items-center justify-center text-[#1A3C8F] font-bold text-sm font-heading shrink-0 overflow-hidden">
+                      <div className="w-10 h-10 rounded-full bg-[#F8C8D4] flex items-center justify-center text-[#1A3C8F] font-bold text-sm font-heading shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110">
                         {item.avatar && !item.avatar.includes("[ADD") ? (
                           <img src={item.avatar} alt={item.name} className="w-full h-full object-cover" />
                         ) : (
@@ -68,11 +72,11 @@ export default function Testimonials() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="testimonial-prev"
-              className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white"
+              className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white transition-all duration-300"
             />
             <CarouselNext
               data-testid="testimonial-next"
-              className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white"
+              className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white transition-all duration-300"
             />
           </Carousel>
         </div>

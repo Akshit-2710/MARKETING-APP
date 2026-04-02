@@ -12,13 +12,13 @@ export default function Process() {
     >
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto px-6 md:px-12 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className="max-w-7xl mx-auto px-6 md:px-12"
       >
         <h2
           data-testid="process-heading"
-          className="font-heading text-3xl md:text-4xl font-bold text-[#1A3C8F] text-center mb-16 tracking-tight"
+          className={`font-heading text-3xl md:text-4xl font-bold text-[#1A3C8F] text-center mb-16 tracking-tight transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           {PROCESS.heading}
         </h2>
@@ -26,16 +26,28 @@ export default function Process() {
         {/* Desktop timeline */}
         <div className="hidden md:flex items-start justify-between relative">
           {/* Connecting line */}
-          <div className="absolute top-6 left-[10%] right-[10%] h-[2px] bg-[#1A3C8F]/20" />
+          <div
+            className={`absolute top-6 left-[10%] right-[10%] h-[2px] bg-[#1A3C8F]/20 ${isVisible ? 'timeline-line visible' : 'opacity-0'}`}
+            style={{ transformOrigin: 'left' }}
+          />
 
           {PROCESS.steps.map((step, i) => (
             <div
               key={i}
               data-testid={`process-step-${i}`}
               className="relative flex flex-col items-center text-center flex-1 px-4"
-              style={{ animationDelay: `${i * 150}ms` }}
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${300 + i * 200}ms`,
+              }}
             >
-              <div className="w-12 h-12 rounded-full bg-[#1A3C8F] text-white flex items-center justify-center text-lg font-bold font-heading relative z-10 shadow-lg shadow-[#1A3C8F]/20">
+              <div
+                className={`w-12 h-12 rounded-full bg-[#1A3C8F] text-white flex items-center justify-center text-lg font-bold font-heading relative z-10 shadow-lg shadow-[#1A3C8F]/20 ${
+                  isVisible ? 'step-circle visible' : 'opacity-0 scale-0'
+                }`}
+                style={{ animationDelay: `${300 + i * 200}ms` }}
+              >
                 {i + 1}
               </div>
               <h3 className="mt-6 font-heading text-lg font-semibold text-[#1A3C8F]">
@@ -55,6 +67,11 @@ export default function Process() {
               key={i}
               data-testid={`process-step-mobile-${i}`}
               className="flex items-start gap-5"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                transition: `all 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${i * 150}ms`,
+              }}
             >
               <div className="flex flex-col items-center">
                 <div className="w-10 h-10 rounded-full bg-[#1A3C8F] text-white flex items-center justify-center text-sm font-bold font-heading shrink-0">

@@ -40,7 +40,7 @@ export default function Navbar() {
   return (
     <header
       data-testid="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 nav-enter transition-all duration-500 ${
         scrolled
           ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_20px_rgba(13,37,97,0.08)]"
           : "bg-white/60 backdrop-blur-md"
@@ -48,7 +48,12 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <a href="#home" onClick={(e) => handleNavClick(e, "#home")} data-testid="navbar-logo">
+        <a
+          href="#home"
+          onClick={(e) => handleNavClick(e, "#home")}
+          data-testid="navbar-logo"
+          className="transition-transform duration-300 hover:scale-105"
+        >
           {LOGO_CONFIG.src && LOGO_CONFIG.src !== "YOUR_LOGO_FILE_PATH_OR_URL_HERE" ? (
             <img src={LOGO_CONFIG.src} alt={LOGO_CONFIG.alt} style={{ height: LOGO_CONFIG.height }} />
           ) : (
@@ -66,13 +71,18 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 data-testid={`nav-link-${link.label.toLowerCase()}`}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`relative text-sm font-medium transition-colors duration-300 ${
                   activeSection === link.href.replace("#", "")
                     ? "text-[#1A3C8F]"
                     : "text-[#0D2561]/60 hover:text-[#1A3C8F]"
                 }`}
               >
                 {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-[#1A3C8F] transition-all duration-300 ${
+                    activeSection === link.href.replace("#", "") ? "w-full" : "w-0"
+                  }`}
+                />
               </a>
             </li>
           ))}
@@ -83,7 +93,7 @@ export default function Navbar() {
           href="#contact"
           onClick={(e) => handleNavClick(e, "#contact")}
           data-testid="navbar-cta"
-          className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-full bg-[#1A3C8F] text-white text-sm font-semibold hover:bg-[#0D2561] transition-colors duration-200"
+          className="hidden lg:inline-flex items-center px-6 py-2.5 rounded-full bg-[#1A3C8F] text-white text-sm font-semibold btn-magnetic hover:bg-[#0D2561] hover:shadow-lg hover:shadow-[#1A3C8F]/25"
         >
           Book a Free Call
         </a>
@@ -91,7 +101,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           data-testid="navbar-mobile-menu-toggle"
-          className="lg:hidden text-[#1A3C8F] p-2"
+          className="lg:hidden text-[#1A3C8F] p-2 transition-transform duration-200 active:scale-90"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -100,36 +110,50 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div
-          data-testid="navbar-mobile-menu"
-          className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-[#0D2561]/10 px-6 pb-6"
-        >
-          <ul className="flex flex-col gap-1 pt-2">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="block py-3 text-sm font-medium text-[#0D2561]/70 hover:text-[#1A3C8F] transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li className="pt-2">
+      <div
+        data-testid="navbar-mobile-menu"
+        className={`lg:hidden bg-white/95 backdrop-blur-xl border-t border-[#0D2561]/10 overflow-hidden transition-all duration-400 ${
+          mobileOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-1 px-6 pb-6 pt-2">
+          {NAV_LINKS.map((link, i) => (
+            <li
+              key={link.href}
+              style={{
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? 'translateX(0)' : 'translateX(-20px)',
+                transition: `opacity 0.3s ease ${i * 50}ms, transform 0.3s ease ${i * 50}ms`,
+              }}
+            >
               <a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, "#contact")}
-                data-testid="navbar-mobile-cta"
-                className="block text-center py-3 rounded-full bg-[#1A3C8F] text-white text-sm font-semibold"
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="block py-3 text-sm font-medium text-[#0D2561]/70 hover:text-[#1A3C8F] transition-colors"
               >
-                Book a Free Call
+                {link.label}
               </a>
             </li>
-          </ul>
-        </div>
-      )}
+          ))}
+          <li
+            className="pt-2"
+            style={{
+              opacity: mobileOpen ? 1 : 0,
+              transform: mobileOpen ? 'translateY(0)' : 'translateY(10px)',
+              transition: `all 0.3s ease ${NAV_LINKS.length * 50}ms`,
+            }}
+          >
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              data-testid="navbar-mobile-cta"
+              className="block text-center py-3 rounded-full bg-[#1A3C8F] text-white text-sm font-semibold"
+            >
+              Book a Free Call
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
