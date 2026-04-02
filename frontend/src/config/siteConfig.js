@@ -45,15 +45,29 @@ export const HERO = {
 };
 
 export const SERVICES = {
-  heading: "What We Do",
-  subtitle: "[ADD SECTION SUBTITLE — e.g. Comprehensive digital solutions tailored to your brand]",
+  heading: "Our Services",
+  subtitle: "We help brands grow with performance-driven digital strategies and stunning creative execution.",
   items: [
-    { icon: "Megaphone", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
-    { icon: "BarChart3", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
-    { icon: "Palette", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
-    { icon: "Globe", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
-    { icon: "Mail", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
-    { icon: "Video", title: "[ADD SERVICE NAME]", description: "[ADD SERVICE DESCRIPTION]" },
+    {
+      icon: "Target",
+      title: "META Ads",
+      description: "We craft high-converting ad campaigns across Facebook and Instagram that reach your ideal audience. From creative strategy and audience targeting to A/B testing and scaling — we manage your entire Meta advertising funnel to deliver maximum ROI with minimum ad spend waste.",
+    },
+    {
+      icon: "Search",
+      title: "Google Ads",
+      description: "We build and optimize Google Search, Display, and YouTube ad campaigns that capture high-intent buyers right when they're searching. Our data-driven approach includes keyword research, bid strategy, landing page optimization, and continuous performance tracking to lower your cost-per-lead.",
+    },
+    {
+      icon: "Monitor",
+      title: "Website Designing",
+      description: "We design and develop modern, fast-loading websites that convert visitors into customers. Every site is built mobile-first with clean UI/UX, strategic CTAs, and SEO-ready architecture — whether it's a landing page, a full brand website, or an e-commerce store.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "SEO",
+      description: "We help your brand rank on page one of Google through comprehensive SEO — from technical audits and on-page optimization to content strategy and high-quality link building. Our organic growth system is designed to bring you consistent, free traffic month after month.",
+    },
   ],
 };
 
@@ -134,9 +148,9 @@ export const CONTACT = {
 export const FOOTER = {
   tagline: "[ADD FOOTER TAGLINE — e.g. Empowering brands to reach their full potential]",
   services: [
-    "[ADD SERVICE 1]",
-    "[ADD SERVICE 2]",
-    "[ADD SERVICE 3]",
-    "[ADD SERVICE 4]",
+    "META Ads",
+    "Google Ads",
+    "Website Designing",
+    "SEO",
   ],
 };
