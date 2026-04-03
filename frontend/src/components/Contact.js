@@ -207,15 +207,17 @@ export default function Contact() {
                   <div className="text-sm text-[#333333]">{CONTACT.phone}</div>
                 </div>
               </div>
-              <div className="flex items-start gap-4 group" data-testid="contact-address-info">
-                <div className="w-10 h-10 rounded-xl bg-[#F8C8D4] flex items-center justify-center text-[#1A3C8F] shrink-0 transition-all duration-300 group-hover:bg-[#1A3C8F] group-hover:text-white group-hover:shadow-md">
-                  <MapPin size={18} />
+              {CONTACT.address && (
+                <div className="flex items-start gap-4 group" data-testid="contact-address-info">
+                  <div className="w-10 h-10 rounded-xl bg-[#F8C8D4] flex items-center justify-center text-[#1A3C8F] shrink-0 transition-all duration-300 group-hover:bg-[#1A3C8F] group-hover:text-white group-hover:shadow-md">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-[#1A3C8F] uppercase tracking-wider mb-1">Office</div>
+                    <div className="text-sm text-[#333333]">{CONTACT.address}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xs font-semibold text-[#1A3C8F] uppercase tracking-wider mb-1">Office</div>
-                  <div className="text-sm text-[#333333]">{CONTACT.address}</div>
-                </div>
-              </div>
+              )}
             </div>
 
             {/* Social Links */}

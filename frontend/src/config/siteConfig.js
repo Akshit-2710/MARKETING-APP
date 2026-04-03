@@ -41,9 +41,9 @@ export const HERO = {
   ctaPrimary: "Claim Your Edge",
   ctaSecondary: "See The Proof",
   trustBadges: [
-    "[ADD NUMBER]+ Brands Scaled",
-    "[ADD NUMBER]+ Revenue Generated",
-    "[ADD NUMBER]+ Markets Dominated",
+    "76 Leads in 4 Days",
+    "₹20,000+ Revenue Generated",
+    "26,000+ Local Impressions",
   ],
 };
 
@@ -92,10 +92,10 @@ export const SERVICES = {
 export const RESULTS = {
   heading: "Our Results Speak",
   stats: [
-    { number: "[ADD NUMBER]", label: "[ADD STAT LABEL]", suffix: "" },
-    { number: "[ADD NUMBER]", label: "[ADD STAT LABEL]", suffix: "" },
-    { number: "[ADD NUMBER]", label: "[ADD STAT LABEL]", suffix: "" },
-    { number: "[ADD NUMBER]", label: "[ADD STAT LABEL]", suffix: "" },
+    { number: "76", label: "Furniture Leads in 4 Days", suffix: "" },
+    { number: "20,000", label: "Rupees Revenue Generated", suffix: "₹" },
+    { number: "254", label: "High Intent Link Clicks", suffix: "+" },
+    { number: "26", label: "Thousand Local Impressions", suffix: "k" },
   ],
 };
 
@@ -112,8 +112,8 @@ export const PROCESS = {
 export const PORTFOLIO = {
   heading: "How We Helped Them Grow",
   projects: [
-    { image: "/images/lords_furnitures.png", title: "Lords Furnitures", category: "META Ads", result: "We helped Lords Furnitures transition to a robust digital brand. By revamping their Instagram aesthetic and launching highly targeted Meta ads, we increased online sales by 300% and expanded their customer reach nationally." },
-    { image: "/images/charan_chest_clinic.png", title: "Charan Chest Clinic", category: "SEO", result: "Through educational Instagram Reels and local SEO, we positioned them as regional healthcare authorities, resulting in a 150% increase in patient footfall and a highly engaged community." }
+    { image: "/images/lords_furnitures.png", title: "Lords Furnitures", category: "META Ads", result: "Using highly targeted Meta Lead Generation ads, we ran a hyper-local campaign in Patiala. With just ₹1,000 in ad spend over 4 days, we successfully generated 76 qualified leads at an incredible ₹11.56 CPA." },
+    { image: "/images/charan_chest_clinic.png", title: "Charan Chest Clinic", category: "SEO", result: "Through educational Instagram Reels and local SEO, we positioned them as regional healthcare authorities, driving a steady stream of local patient inquiries and a highly engaged community." }
   ],
 };
 
@@ -121,7 +121,7 @@ export const TESTIMONIALS = {
   heading: "Client Results & Feedback",
   items: [
     { 
-      text: "The transition from our offline showroom to a strong online presence was seamless. Their targeted ad campaigns resulted in a 300% increase in our online sales and massive brand reach.", 
+      text: "MARKETING MEDIA completely transformed our lead generation. With just a ₹1,000 ad spend, they delivered 76 highly qualified leads in only 4 days. Their targeting is precise and extremely cost-effective.", 
       name: "Lords Furnitures", 
       designation: "Owner", 
       company: "Lords Furnitures", 
@@ -142,36 +142,35 @@ export const TESTIMONIALS = {
 export const WHY_CHOOSE_US = {
   heading: "Why MARKETING MEDIA",
   features: [
-    { icon: "Shield", title: "[ADD FEATURE TITLE]", description: "[ADD FEATURE DESCRIPTION]" },
-    { icon: "Zap", title: "[ADD FEATURE TITLE]", description: "[ADD FEATURE DESCRIPTION]" },
-    { icon: "Users", title: "[ADD FEATURE TITLE]", description: "[ADD FEATURE DESCRIPTION]" },
-    { icon: "TrendingUp", title: "[ADD FEATURE TITLE]", description: "[ADD FEATURE DESCRIPTION]" },
+    { icon: "ShieldCheck", title: "Data-Driven Precision", description: "We never guess. Every campaign is backed by rigorous A/B testing, real-time analytics, and relentless optimization to scale what works." },
+    { icon: "Zap", title: "Unstoppable Momentum", description: "We equip your brand with the exact omnichannel blueprints used by the top 1% of market leaders, engineering an explosive brand takeover." },
+    { icon: "Users", title: "Executive-Level Focus", description: "Your strategy is crafted by actual brand builders, not juniors. We treat your ad spend with the exact same aggression we treat our own capital." },
+    { icon: "Crosshair", title: "Scalable Dominance", description: "We don't generate temporary spikes. We build self-sustaining growth ecosystems engineered to capture high-intent buyers every single day." },
   ],
 };
 
 export const CONTACT = {
   heading: "One Brief. One Call. One Strategy That Changes Everything.",
   subtext: "Fill in the form below and our team will get back to you with a plan built specifically for your brand.",
-  email: "[ADD EMAIL ADDRESS]",
-  phone: "[ADD PHONE NUMBER]",
-  address: "[ADD OFFICE ADDRESS]",
+  email: "tiyapps29012005@gmail.com",
+  phone: "781481018",
   socialLinks: {
     facebook: "[ADD FACEBOOK URL]",
     twitter: "[ADD TWITTER URL]",
-    instagram: "[ADD INSTAGRAM URL]",
+    instagram: "https://www.instagram.com/marketingmedia90/",
     linkedin: "[ADD LINKEDIN URL]",
   },
   serviceOptions: [
-    "[ADD SERVICE OPTION 1]",
-    "[ADD SERVICE OPTION 2]",
-    "[ADD SERVICE OPTION 3]",
-    "[ADD SERVICE OPTION 4]",
-    "[ADD SERVICE OPTION 5]",
+    "META Ads",
+    "Google Ads",
+    "Website Design",
+    "SEO",
+    "Other/Consulting",
   ],
 };
 
 export const FOOTER = {
-  tagline: "[ADD FOOTER TAGLINE — e.g. Empowering brands to reach their full potential]",
+  tagline: "Your unfair advantage in a crowded market.",
   services: [
     "META Ads",
     "Google Ads",
