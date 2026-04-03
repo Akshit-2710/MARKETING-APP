@@ -13,7 +13,7 @@ import {
 import { MapPin, Phone, Mail as MailIcon, Facebook, Twitter, Instagram, Linkedin, Send, CheckCircle } from "lucide-react";
 import axios from "axios";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api` : '/api';
 
 export default function Contact() {
   const [headRef, headVisible] = useScrollReveal(0.2);
