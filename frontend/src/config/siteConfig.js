@@ -47,6 +47,21 @@ export const HERO = {
   ],
 };
 
+export const FOUNDER_CONTENT = {
+  heading: "Founder Lead Content",
+  videos: [
+    "/videos/founder1.mp4",
+    "/videos/founder2.mp4"
+  ]
+};
+
+export const INFLUENCER_CONTENT = {
+  heading: "Influencer Content",
+  videos: [
+    "/videos/influencer1.mp4"
+  ]
+};
+
 export const SERVICES = {
   heading: "Our Services",
   subtitle: "We help brands grow with performance-driven digital strategies and stunning creative execution.",
@@ -97,8 +112,8 @@ export const PROCESS = {
 export const PORTFOLIO = {
   heading: "How We Helped Them Grow",
   projects: [
-    { image: "/images/lords_furnitures.png", title: "Lords Furnitures", category: "E-Commerce & Social Media", result: "We helped Lords Furnitures transition to a robust digital brand. By revamping their Instagram aesthetic and launching highly targeted Meta ads, we increased online sales by 300% and expanded their customer reach nationally." },
-    { image: "/images/charan_chest_clinic.png", title: "Charan Chest Clinic", category: "Healthcare & Patient Acquisition", result: "Through educational Instagram Reels and local SEO, we positioned them as regional healthcare authorities, resulting in a 150% increase in patient footfall and a highly engaged community." },
+    { image: "/images/lords_furnitures.png", title: "Lords Furnitures", category: "META Ads", result: "We helped Lords Furnitures transition to a robust digital brand. By revamping their Instagram aesthetic and launching highly targeted Meta ads, we increased online sales by 300% and expanded their customer reach nationally." },
+    { image: "/images/charan_chest_clinic.png", title: "Charan Chest Clinic", category: "SEO", result: "Through educational Instagram Reels and local SEO, we positioned them as regional healthcare authorities, resulting in a 150% increase in patient footfall and a highly engaged community." }
   ],
 };
 
@@ -135,8 +150,8 @@ export const WHY_CHOOSE_US = {
 };
 
 export const CONTACT = {
-  heading: "[ADD CTA HEADING — e.g. Ready to Scale Your Brand?]",
-  subtext: "[ADD CTA SUBTEXT]",
+  heading: "One Brief. One Call. One Strategy That Changes Everything.",
+  subtext: "Fill in the form below and our team will get back to you with a plan built specifically for your brand.",
   email: "[ADD EMAIL ADDRESS]",
   phone: "[ADD PHONE NUMBER]",
   address: "[ADD OFFICE ADDRESS]",

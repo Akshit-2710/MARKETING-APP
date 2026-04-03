@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FounderContent from "@/components/FounderContent";
 
 function App() {
   const [splashDone, setSplashDone] = useState(false);
@@ -31,6 +32,7 @@ function App() {
         <Navbar />
         <main>
           <Hero showContent={splashDone} />
+          <FounderContent />
           <Services />
           <Results />
           <Process />
