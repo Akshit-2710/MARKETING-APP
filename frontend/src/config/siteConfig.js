@@ -51,7 +51,8 @@ export const FOUNDER_CONTENT = {
   heading: "Founder Lead Content",
   videos: [
     "/videos/founder1.mp4",
-    "/videos/founder2.mp4"
+    "/videos/founder2.mp4",
+    "/videos/founder3.mp4"
   ]
 };
 
