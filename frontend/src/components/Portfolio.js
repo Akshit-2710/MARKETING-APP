@@ -1,18 +1,13 @@
 import { useState } from "react";
-import { PORTFOLIO } from "@/config/siteConfig";
-import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
-import { ExternalLink } from "lucide-react";
+import { GROWTH_ANALYTICS } from "@/config/siteConfig";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
 
 export default function Portfolio() {
   const [headRef, headVisible] = useScrollReveal(0.2);
-  const [gridRef, gridVisible, getChildDelay] = useStaggerReveal(0.1);
-  const [filter, setFilter] = useState("All");
+  const [activeClientIndex, setActiveClientIndex] = useState(0);
 
-  const categories = ["All", "META Ads", "Google Ads", "Website Designing", "SEO"];
-  
-  const filteredProjects = filter === "All" 
-    ? PORTFOLIO.projects 
-    : PORTFOLIO.projects.filter(p => p.category === filter);
+  const activeClient = GROWTH_ANALYTICS.clients[activeClientIndex];
 
   return (
     <section
@@ -28,76 +23,79 @@ export default function Portfolio() {
             headVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {PORTFOLIO.heading}
+          {GROWTH_ANALYTICS.heading}
         </h2>
 
-        {/* Category Filters */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-16 transition-all duration-700 delay-200 ${
+        {/* Client Name Filters */}
+        <div className={`flex flex-wrap justify-center gap-4 mb-16 transition-all duration-700 delay-200 ${
             headVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          {categories.map((cat) => (
+          {GROWTH_ANALYTICS.clients.map((client, idx) => (
             <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                filter === cat 
-                  ? "bg-[#1A3C8F] text-white shadow-md scale-105" 
+              key={client.name}
+              onClick={() => setActiveClientIndex(idx)}
+              className={`px-8 py-3 rounded-full text-base font-bold transition-all duration-300 ${
+                activeClientIndex === idx 
+                  ? "bg-[#1A3C8F] text-white shadow-lg scale-105" 
                   : "bg-[#FDE8EE] text-[#1A3C8F] hover:bg-[#F8C8D4] hover:scale-105"
               }`}
             >
-              {cat}
+              {client.name}
             </button>
           ))}
         </div>
 
-        {filteredProjects.length > 0 ? (
-          <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 min-h-[400px]">
-            {filteredProjects.map((project, i) => (
-              <div
-                key={i}
-                data-testid={`portfolio-card-${i}`}
-                className="portfolio-card group relative rounded-2xl overflow-hidden bg-[#FDE8EE] aspect-[4/3] cursor-pointer"
-                style={getChildDelay(i)}
-              >
-                {/* Image or placeholder */}
-                {project.image && !project.image.includes("[ADD") ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        {/* Chart Section */}
+        {activeClient && (
+          <div className="bg-[#FDE8EE]/50 rounded-3xl p-6 md:p-12 shadow-sm border border-[#F8C8D4]/50 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 transition-all duration-500">
+            <div className="w-full md:w-1/2 min-h-[300px] flex justify-center">
+              <ResponsiveContainer width="100%" height={350}>
+                <PieChart>
+                  <Pie
+                    data={activeClient.data}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={80}
+                    outerRadius={130}
+                    paddingAngle={5}
+                    dataKey="value"
+                    stroke="none"
+                  >
+                    {activeClient.data.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color || "#1A3C8F"} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ borderRadius: '16px', border: 'none', backgroundColor: '#fff', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
+                    itemStyle={{ fontWeight: 'bold' }}
                   />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#F8C8D4] to-[#FDE8EE] flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
-                    <span className="text-[#1A3C8F]/30 text-sm font-medium">{project.image}</span>
-                  </div>
-                )}
-  
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#0D2561]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center text-white p-6">
-                  <div className="overlay-content text-center">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#F8C8D4] mb-2 block">
-                      {project.category}
+                  <Legend verticalAlign="bottom" height={36} iconType="circle" wrapperStyle={{ paddingTop: '20px' }} />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-heading font-black text-[#1A3C8F] mb-4">
+                {activeClient.name} Growth
+              </h3>
+              <p className="text-[#1A3C8F]/80 text-lg leading-relaxed mb-8 font-medium">
+                {activeClient.description}
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {activeClient.data.map((stat, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl p-5 shadow-sm border border-[#F8C8D4]/30 hover:shadow-md transition-shadow">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#1A3C8F]/50 block mb-2">
+                      {stat.label}
                     </span>
-                    <h3 className="font-heading text-xl font-bold">
-                      {project.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/70">{project.result}</p>
+                    <span className="text-3xl font-black" style={{ color: stat.color }}>
+                      {stat.value}
+                      {stat.label.includes('%') ? '%' : ''}
+                    </span>
                   </div>
-                  <div className="overlay-icon mt-4 w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
-                    <ExternalLink size={16} />
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="flex flex-col items-center justify-center min-h-[300px] w-full bg-gradient-to-b from-[#FDE8EE] to-white rounded-3xl border border-[#F8C8D4]/50 py-16 px-6 text-center shadow-sm">
-            <h3 className="font-heading text-3xl md:text-5xl font-extrabold text-[#1A3C8F] italic tracking-tight opacity-90 drop-shadow-sm">
-              " You can be the first. "
-            </h3>
-            <p className="mt-6 text-[#1A3C8F]/60 font-medium">
-              We have the strategy ready. Claim your spot and dominate this space.
-            </p>
+            </div>
           </div>
         )}
       </div>

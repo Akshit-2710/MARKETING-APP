@@ -110,6 +110,30 @@ export const PROCESS = {
   ],
 };
 
+export const GROWTH_ANALYTICS = {
+  heading: "Client Growth Data",
+  clients: [
+    {
+      name: "Lords Furnitures",
+      description: "Explosive lead generation with hyper-targeted ad campaigns.",
+      data: [
+        { label: "New Leads", value: 76, color: "#1A3C8F" },
+        { label: "Link Clicks", value: 254, color: "#0D2561" },
+        { label: "Conversions", value: 45, color: "#F8C8D4" }
+      ]
+    },
+    {
+      name: "Charan Chest Clinic",
+      description: "Consistent organic growth and regional authority established via SEO.",
+      data: [
+        { label: "New Footfall %", value: 150, color: "#1A3C8F" },
+        { label: "Search Ranking", value: 85, color: "#0D2561" },
+        { label: "Reach Growth", value: 120, color: "#F8C8D4" }
+      ]
+    }
+  ]
+};
+
 export const PORTFOLIO = {
   heading: "How We Helped Them Grow",
   projects: [
