@@ -32,11 +32,11 @@ function App() {
         <Navbar />
         <main>
           <Hero showContent={splashDone} />
-          <FounderContent />
           <Services />
+          <Portfolio />
           <Results />
           <Process />
-          <Portfolio />
+          <FounderContent />
           <Testimonials />
           <WhyChooseUs />
           <Contact />

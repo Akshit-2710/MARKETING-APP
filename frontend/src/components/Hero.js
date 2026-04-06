@@ -130,6 +130,17 @@ export default function Hero({ showContent }) {
           >
             {HERO.description}
           </p>
+
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-[0.65rem] md:text-xs font-bold tracking-[0.2em] text-[#1A3C8F]/60 uppercase">
+            <span>META Ads</span>
+            <span className="w-1 h-1 rounded-full bg-[#1A3C8F]/30 self-center" />
+            <span>Google Ads</span>
+            <span className="w-1 h-1 rounded-full bg-[#1A3C8F]/30 self-center" />
+            <span>SEO</span>
+            <span className="w-1 h-1 rounded-full bg-[#1A3C8F]/30 self-center" />
+            <span>Web Design</span>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#contact"

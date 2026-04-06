@@ -44,8 +44,15 @@ Service and feature icons use [Lucide React](https://lucide.dev/icons) names.
 In `siteConfig.js`, change the `icon` field to any valid Lucide icon name (e.g., `"Megaphone"`, `"BarChart3"`, `"Palette"`).
 
 ### 5. Deploy
-- Run `yarn build` to create a production build
-- Upload the `build/` folder to any static hosting (Netlify, Vercel, etc.)
+This project is configured for Vercel deployment from the repository root.
+
+- Vercel build command: `cd frontend && npm install && npm run build`
+- Output directory: `frontend/build`
+- The target deployment URL can be `https://marketing-app-wine-ten.vercel.app/` when the Vercel project is connected to this repo.
+
+You can also run:
+- `yarn build` from the `frontend` folder for a local build
+- or use Vercel CLI from the repo root: `vercel --prod`
 
 ### File Structure
 ```

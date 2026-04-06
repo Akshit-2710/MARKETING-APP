@@ -48,6 +48,29 @@ export default function Portfolio() {
         {/* Chart Section */}
         {activeClient && (
           <div className="bg-[#FDE8EE]/50 rounded-3xl p-6 md:p-12 shadow-sm border border-[#F8C8D4]/50 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 transition-all duration-500">
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-heading font-black text-[#1A3C8F] mb-4">
+                {activeClient.name} Growth
+              </h3>
+              <p className="text-[#1A3C8F]/80 text-lg leading-relaxed mb-8 font-medium">
+                {activeClient.description}
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {activeClient.data.map((stat, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl p-5 shadow-sm border border-[#F8C8D4]/30 hover:shadow-md transition-shadow">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#1A3C8F]/50 block mb-2">
+                      {stat.label}
+                    </span>
+                    <span className="text-3xl font-black" style={{ color: stat.color }}>
+                      {stat.value}
+                      {stat.label.includes('%') ? '%' : ''}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
             <div className="w-full md:w-1/2 min-h-[300px] flex justify-center">
               <ResponsiveContainer width="100%" height={350}>
                 <PieChart>
@@ -72,29 +95,6 @@ export default function Portfolio() {
                   <Legend verticalAlign="bottom" height={36} iconType="circle" wrapperStyle={{ paddingTop: '20px' }} />
                 </PieChart>
               </ResponsiveContainer>
-            </div>
-            
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-heading font-black text-[#1A3C8F] mb-4">
-                {activeClient.name} Growth
-              </h3>
-              <p className="text-[#1A3C8F]/80 text-lg leading-relaxed mb-8 font-medium">
-                {activeClient.description}
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {activeClient.data.map((stat, idx) => (
-                  <div key={idx} className="bg-white rounded-2xl p-5 shadow-sm border border-[#F8C8D4]/30 hover:shadow-md transition-shadow">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#1A3C8F]/50 block mb-2">
-                      {stat.label}
-                    </span>
-                    <span className="text-3xl font-black" style={{ color: stat.color }}>
-                      {stat.value}
-                      {stat.label.includes('%') ? '%' : ''}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         )}

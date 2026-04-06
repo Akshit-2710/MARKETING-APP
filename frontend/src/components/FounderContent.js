@@ -32,9 +32,6 @@ function VideoStack({ heading, subtext, label, videos }) {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="mb-10 text-center">
-        <span className="text-[0.65rem] md:text-xs font-bold tracking-[0.2em] text-[#1A3C8F]/60 uppercase mb-3 block">
-          {subtext}
-        </span>
         <h2
           className="text-3xl md:text-4xl text-center tracking-wide transition-all duration-700 uppercase"
           style={{ fontFamily: "'Saira Stencil One', sans-serif", color: "#0D2561", lineHeight: 1.1 }}
@@ -108,7 +105,13 @@ function VideoStack({ heading, subtext, label, videos }) {
         })}
       </div>
       
-      <div className="flex justify-center items-center gap-6 mt-10">
+      <div className="mt-6 text-center">
+        <span className="text-[0.65rem] md:text-xs font-bold tracking-[0.2em] text-[#1A3C8F]/60 uppercase">
+          {subtext}
+        </span>
+      </div>
+      
+      <div className="flex justify-center items-center gap-6 mt-6">
          <button onClick={handlePrev} className="w-12 h-12 flex items-center justify-center rounded-full bg-[#FDE8EE] text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white transition-all duration-300 shadow-md hover:scale-110">
            <ChevronLeft size={20} strokeWidth={2.5} />
          </button>
