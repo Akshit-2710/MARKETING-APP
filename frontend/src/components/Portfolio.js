@@ -2,52 +2,12 @@ import { useState } from "react";
 import { GROWTH_ANALYTICS } from "@/config/siteConfig";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
 
 export default function Portfolio() {
   const [headRef, headVisible] = useScrollReveal(0.2);
   const [activeClientIndex, setActiveClientIndex] = useState(0);
 
   const activeClient = GROWTH_ANALYTICS.clients[activeClientIndex];
-
-  const successStories = [
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.31.48 PM.jpeg",
-      title: "Ad Inquiry Chat",
-      category: "Paid Client Conversion",
-    },
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.32.39 PM.jpeg",
-      title: "Resort Request",
-      category: "Lead Conversation",
-    },
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.33.22 PM.jpeg",
-      title: "Pricing Question",
-      category: "Hot Prospect",
-    },
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.33.54 PM.jpeg",
-      title: "Product Details Ask",
-      category: "Storefront Inquiry",
-    },
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.34.19 PM.jpeg",
-      title: "Client Follow-Up",
-      category: "Sales Conversation",
-    },
-    {
-      image: "/images/WhatsApp Image 2026-04-10 at 1.34.58 PM.jpeg",
-      title: "Close-Ready Lead",
-      category: "Conversation Win",
-    },
-  ];
 
   return (
     <section
@@ -139,51 +99,6 @@ export default function Portfolio() {
           </div>
         )}
 
-        <div className={`mt-16 rounded-[2rem] border border-[#E5E7EB] bg-white p-8 md:p-10 shadow-sm transition-all duration-700 ${
-            headVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="font-display text-3xl md:text-4xl font-black text-[#1A3C8F] mb-4">
-              Your inbox could look exactly like this
-            </h3>
-            <p className="font-display mx-auto max-w-2xl text-[#1A3C8F]/80 text-lg leading-relaxed">
-              Every conversation below started with a stranger. We turned them into paying clients — for businesses just like yours. Connect with us, and your chat is next.
-            </p>
-          </div>
-
-          <div className="mt-10 relative">
-            <Carousel opts={{ align: "start", loop: true }}>
-              <CarouselContent className="-ml-6">
-                {successStories.map((story) => (
-                  <CarouselItem key={story.title} className="pl-6 md:basis-1/2">
-                    <div className="overflow-hidden rounded-[1.75rem] border border-[#E5E7EB] bg-[#F8FAFC] shadow-sm">
-                      <img
-                        src={story.image}
-                        alt={story.title}
-                        className="h-[340px] w-full object-cover"
-                      />
-                      <div className="p-5">
-                        <div className="text-xs uppercase tracking-[0.24em] text-[#1A3C8F]/60 mb-2">
-                          {story.category}
-                        </div>
-                        <div className="text-xl font-semibold text-[#1A3C8F] font-display">
-                          {story.title}
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-
-              <CarouselPrevious
-                className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white transition-all duration-300"
-              />
-              <CarouselNext
-                className="border-[#1A3C8F]/20 text-[#1A3C8F] hover:bg-[#1A3C8F] hover:text-white transition-all duration-300"
-              />
-            </Carousel>
-          </div>
-        </div>
       </div>
     </section>
   );

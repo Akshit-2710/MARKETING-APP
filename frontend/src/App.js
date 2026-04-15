@@ -3,7 +3,7 @@ import "@/App.css";
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import ClientChats from "@/components/ClientChats";
 import Results from "@/components/Results";
 import Process from "@/components/Process";
 import Portfolio from "@/components/Portfolio";
@@ -32,7 +32,7 @@ function App() {
         <Navbar />
         <main>
           <Hero showContent={splashDone} />
-          <Services />
+          <ClientChats />
           <Portfolio />
           <Results />
           <Process />

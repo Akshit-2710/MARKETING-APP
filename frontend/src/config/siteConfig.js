@@ -90,6 +90,19 @@ export const SERVICES = {
   ],
 };
 
+export const CLIENT_CHATS = {
+  heading: "Real Clients. Real Chats. Real Results.",
+  subtitle: "These are actual conversations from clients who came to us through our ad campaigns — unfiltered and unedited.",
+  images: [
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.31.48%20PM.jpeg",
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.32.39%20PM.jpeg",
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.33.22%20PM.jpeg",
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.33.54%20PM.jpeg",
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.34.19%20PM.jpeg",
+    "/images/WhatsApp%20Image%202026-04-10%20at%201.34.58%20PM.jpeg",
+  ],
+};
+
 export const RESULTS = {
   heading: "Our Results Speak",
   stats: [
